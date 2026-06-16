@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # 加载模型
-model = joblib.load('results/best_models_reduced.pkl')
+model = joblib.load('best_models_reduced.pkl')
 
 # 页面配置
 st.set_page_config(page_title="糖尿病风险预测", page_icon="", layout="centered")
