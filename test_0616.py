@@ -54,7 +54,6 @@ with st.form("prediction_form"):
     
     with col2:
         gen_hlth = st.selectbox("整体健康自评", ["很好", "较好", "一般", "较差", "很差"], index=0)
-        high_chol = st.radio("是否高血脂", ["否", "是"], index=0, horizontal=True)
         income = st.selectbox("全家年收入", list(income_map.keys()), index=0)  # 默认"不清楚"
         chol_check = st.radio("5年内是否做过胆固醇检查", ["否", "是"], index=0, horizontal=True)
     
@@ -69,7 +68,6 @@ if submitted:
         1 if high_bp == "是" else 0,
         bmi,
         age_map[age],
-        1 if high_chol == "是" else 0,
         income_map[income],
         1 if sex == "男" else 0,
         1 if chol_check == "是" else 0
@@ -130,7 +128,6 @@ if submitted:
         - **BMI**: {bmi}
         - **整体健康**: {gen_hlth}
         - **高血压**: {high_bp}
-        - **高血脂**: {high_chol}
         - **收入水平**: {income}
         - **胆固醇检查**: {chol_check}
         """)
